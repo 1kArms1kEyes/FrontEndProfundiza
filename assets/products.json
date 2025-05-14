@@ -89,23 +89,23 @@
     },
     {
         "id": 9,
-        "name": "Product 9",
-        "brand": "Brand 9",
-        "model": "Model-1009",
-        "description": "This is a detailed description of product 9.",
+        "name": "Bisagra de montaje superficial de hierro maleable",
+        "brand": "McMaster-Carr",
+        "model": "OE1852A59",
+        "description": "Altura de hoja de 3\", ancho abierto de 4\", color burdeos.",
         "quantity": 109,
-        "category": "Category B",
+        "category": "Herrajes Estructurales y de Montaje",
         "price": 94.5,
         "image": "assets/images/product9.jpg"
     },
     {
         "id": 10,
-        "name": "Product 10",
-        "brand": "Brand 10",
-        "model": "Model-1010",
-        "description": "This is a detailed description of product 10.",
+        "name": "Conectores tipo Yor-Lok de acero inoxidable0",
+        "brand": "McMaster-Carr",
+        "model": "5182K807",
+        "description": "Bolsa de 32 conectores para tubo de 1/4\" de diámetro externo.",
         "quantity": 110,
-        "category": "Category A",
+        "category": "Herrajes Estructurales y de Montaje",
         "price": 105.0,
         "image": "assets/images/product10.jpg"
     }

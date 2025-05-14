@@ -36,10 +36,10 @@ function displayProducts(prodList) {
     container.innerHTML = "";
     prodList.forEach(p => {
         const card = `
-            <div class="col-md-4 mb-3">
-                <div class="card">
+            <div class="col-md-4 mb-3 d-flex">
+                <div class="card w-100 d-flex flex-column">
                     <img src="${p.image}" class="card-img-top" alt="${p.name}" onclick="openModal(${p.id})">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column justify-content-between">
                         <h5 class="card-title">${p.name}</h5>
                         <p class="card-text">${p.category}</p>
                     </div>
@@ -48,6 +48,7 @@ function displayProducts(prodList) {
         container.innerHTML += card;
     });
 }
+
 
 function openModal(id) {
     const product = products.find(p => p.id === id);
