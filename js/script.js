@@ -1,85 +1,29 @@
-
-
-fetch('assets/products.json')
-  .then(response => response.json())
-  .then(data => {
-    products = data;
-    displayProducts(products);
-  });
-
-window.onload = function () {
-    document.getElementById("searchBar").addEventListener("input", function (e) {
-        const query = e.target.value.toLowerCase();
-        const filtered = products.filter(p =>
-            p.name.toLowerCase().includes(query) || p.category.toLowerCase().includes(query)
-        );
-        displayProducts(filtered);
-    });
-};
-
-function displayProducts(prodList) {
-    const container = document.getElementById("productList");
-    container.innerHTML = "";
-    prodList.forEach(p => {
-        const card = `<div class="col-md-4 mb-3">
-            <div class="card">
-                <img src="${p.image}" class="card-img-top" onclick="openModal(${p.id})">
-                <div class="card-body">
-                    <h5 class="card-title">${p.name}</h5>
-                    <p class="card-text">${p.category}</p>
-                </div>
-            </div>
-        </div>`;
-        container.innerHTML += card;
-    });
-}
-
-function openModal(id) {
-    const product = products.find(p => p.id === id);
-    document.getElementById("modalTitle").innerText = product.name;
-    document.getElementById("modalBody").innerHTML = `
-        <img src="${product.image}" class="me-3 rounded" style="width: 150px; height: auto;">
-        <div>
-            <p><strong>Brand:</strong> ${product.brand}</p>
-            <p><strong>Model:</strong> ${product.model}</p>
-            <p><strong>Description:</strong> ${product.description}</p>
-            <p><strong>Available:</strong> ${product.quantity}</p>
-            <p><strong>Category:</strong> ${product.category}</p>
-            <p><strong>Price:</strong> $${product.price}</p>
-        </div>
-    `;
-    document.getElementById("productQuantity").value = 1;
-    document.getElementById("productModal").setAttribute("data-id", id);
-    new bootstrap.Modal(document.getElementById("productModal")).show();
-}
-
-// The rest of the previous JavaScript remains unchanged
-
 let loggedIn = false;
 let users = [];
 let cart = [];
 let products = [];
 
-for (let i = 1; i <= 10; i++) {
-    products.push({
-        id: i,
-        name: "Product " + i,
-        brand: "Brand " + i,
-        model: "Model " + i,
-        description: "Description of product " + i,
-        quantity: 100,
-        category: i % 2 === 0 ? "Category A" : "Category B",
-        price: 10 * i,
-        image: `assets/images/product${i}.png`
-    });
-}
-
 window.onload = function () {
-    displayProducts(products);
+    fetch('assets/products.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Error loading product data.");
+            }
+            return response.json();
+        })
+        .then(data => {
+            products = data;
+            displayProducts(products);
+        })
+        .catch(error => {
+            console.error("Error fetching products:", error);
+        });
+
     document.getElementById("searchBar").addEventListener("input", function (e) {
         const query = e.target.value.toLowerCase();
         const filtered = products.filter(p =>
-            p.name.toLowerCase().includes(query) || p.category.toLowerCase().includes(query)
+            p.name.toLowerCase().includes(query) ||
+            p.category.toLowerCase().includes(query)
         );
         displayProducts(filtered);
     });
@@ -87,37 +31,40 @@ window.onload = function () {
 
 function displayProducts(prodList) {
     const container = document.getElementById("productList");
+    if (!container) return;
+
     container.innerHTML = "";
     prodList.forEach(p => {
-        const card = `<div class="col-md-4 mb-3">
-            <div class="card">
-                <img src="${p.image}" class="card-img-top" onclick="openModal(${p.id})">
-                <div class="card-body">
-                    <h5 class="card-title">${p.name}</h5>
-                    <p class="card-text">${p.category}</p>
+        const card = `
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="${p.image}" class="card-img-top" alt="${p.name}" onclick="openModal(${p.id})">
+                    <div class="card-body">
+                        <h5 class="card-title">${p.name}</h5>
+                        <p class="card-text">${p.category}</p>
+                    </div>
                 </div>
-            </div>
-        </div>`;
+            </div>`;
         container.innerHTML += card;
     });
 }
 
 function openModal(id) {
     const product = products.find(p => p.id === id);
+    if (!product) return;
+
     document.getElementById("modalTitle").innerText = product.name;
-    
     document.getElementById("modalBody").innerHTML = `
         <img src="${product.image}" class="me-3 rounded" style="width: 150px; height: auto;">
         <div>
-            <p><strong>Brand:</strong> ${product.brand}</p>
-            <p><strong>Model:</strong> ${product.model}</p>
-            <p><strong>Description:</strong> ${product.description}</p>
-            <p><strong>Available:</strong> ${product.quantity}</p>
-            <p><strong>Category:</strong> ${product.category}</p>
-            <p><strong>Price:</strong> $${product.price}</p>
+            <p><strong>Marca:</strong> ${product.brand}</p>
+            <p><strong>Modelo:</strong> ${product.model}</p>
+            <p><strong>Descripción:</strong> ${product.description}</p>
+            <p><strong>Cnt.Disponible:</strong> ${product.quantity}</p>
+            <p><strong>Categoría:</strong> ${product.category}</p>
+            <p><strong>Precio (USD):</strong> $${product.price}</p>
         </div>
     `;
-    
     document.getElementById("productQuantity").value = 1;
     document.getElementById("productModal").setAttribute("data-id", id);
     new bootstrap.Modal(document.getElementById("productModal")).show();
@@ -125,7 +72,7 @@ function openModal(id) {
 
 function addToCart() {
     if (!loggedIn) {
-        alert("Please login first.");
+        alert("Por favor, ingrese a su cuenta primero.");
         new bootstrap.Modal(document.getElementById("loginModal")).show();
         return;
     }
@@ -151,7 +98,7 @@ function showCart() {
                 ${item.name} (${item.qty})
                 <button class="btn btn-sm btn-outline-secondary" onclick="updateQty(${index}, -1)">-</button>
                 <button class="btn btn-sm btn-outline-secondary" onclick="updateQty(${index}, 1)">+</button>
-                <button class="btn btn-sm btn-outline-danger" onclick="removeItem(${index})">Remove</button>
+                <button class="btn btn-sm btn-outline-danger" onclick="removeItem(${index})">Eliminar producto</button>
             </div>
         </div>`;
     });
@@ -173,7 +120,7 @@ function removeItem(index) {
 
 function sendWhatsApp() {
     const number = "+573134773765";
-    const messageHeader = "Hi, I am interested in the following products:%0A";
+    const messageHeader = "Hola, me encuentro interesado en los siguientes productos:%0A";
     const messageBody = cart.map(item => `- ${item.name}: ${item.qty}`).join("%0A");
     const finalMessage = `${messageHeader}${messageBody}`;
     const whatsappURL = `https://wa.me/${number}?text=${finalMessage}`;
@@ -194,10 +141,10 @@ function login() {
     const found = users.find(u => u.username === user && u.password === pass);
     if (found) {
         loggedIn = true;
-        alert("Login successful.");
+        alert("Login existoso.");
         bootstrap.Modal.getInstance(document.getElementById("loginModal")).hide();
     } else {
-        alert("Incorrect username or password.");
+        alert("Nombre de usuario o contraseña incorrectos.");
     }
 }
 
@@ -206,14 +153,14 @@ function signup() {
     const newPass = document.getElementById("newPassword").value;
     const exists = users.find(u => u.username === newUser);
     if (exists) {
-        alert("Username already exists. Please choose another.");
+        alert("El usuario ya existe. Por favor eliga otro nombre de usuario.");
         return;
     }
     if (newUser && newPass) {
         users.push({ username: newUser, password: newPass });
-        alert("Account created. You can now log in.");
+        alert("Cuenta creada. Puede ahora ingresar a la cuenta.");
         bootstrap.Modal.getInstance(document.getElementById("signupModal")).hide();
     } else {
-        alert("Please enter a username and password.");
+        alert("Por favor ingrese el usuario y la contraseña.");
     }
 }

@@ -1,91 +1,91 @@
 [
     {
         "id": 1,
-        "name": "Product 1",
-        "brand": "Brand 1",
-        "model": "Model-1001",
-        "description": "This is a detailed description of product 1.",
+        "name": "Pasadores cilíndricos de acero inoxidable",
+        "brand": "McMaster-Carr",
+        "model": "90145A472",
+        "description": "Bolsa de 50 pasadores de 1/8\" de diámetro y 5/8\" de largo.",
         "quantity": 101,
-        "category": "Category B",
+        "category": "Elementos de Sujeción y Unión",
         "price": 10.5,
-        "image": "assets/images/product1.png"
+        "image": "assets/images/product1.jpg"
     },
     {
         "id": 2,
-        "name": "Product 2",
-        "brand": "Brand 2",
-        "model": "Model-1002",
-        "description": "This is a detailed description of product 2.",
+        "name": "Tornillos de cabeza cilíndrica tipo Allen",
+        "brand": "McMaster-Carr",
+        "model": "92196A242",
+        "description": "Caja de 100 tornillos de acero inoxidable, rosca 10-24, 1/2\" de largo.",
         "quantity": 102,
-        "category": "Category A",
+        "category": "Elementos de Sujeción y Unión",
         "price": 21.0,
-        "image": "assets/images/product2.png"
+        "image": "assets/images/product2.jpg"
     },
     {
         "id": 3,
-        "name": "Product 3",
-        "brand": "Brand 3",
-        "model": "Model-1003",
-        "description": "This is a detailed description of product 3.",
+        "name": "Arandelas cuadradas cónicas",
+        "brand": "McMaster-Carr",
+        "model": "1857391",
+        "description": "Bolsa de 10 arandelas cónicas M12, acero 435 con recubrimiento de zinc.",
         "quantity": 103,
-        "category": "Category B",
+        "category": "Elementos de Sujeción y Unión",
         "price": 31.5,
-        "image": "assets/images/product3.png"
+        "image": "assets/images/product3.jpg"
     },
     {
         "id": 4,
-        "name": "Product 4",
-        "brand": "Brand 4",
-        "model": "Model-1004",
-        "description": "This is a detailed description of product 4.",
+        "name": "Perillas de tornillo tipo mariposa (Shear-Loc)",
+        "brand": "McMaster-Carr",
+        "model": "91175A082",
+        "description": "Bolsa de 50 perillas plásticas negras para tornillos.",
         "quantity": 104,
-        "category": "Category A",
+        "category": "Elementos de Sujeción y Unión",
         "price": 42.0,
-        "image": "assets/images/product4.png"
+        "image": "assets/images/product4.jpg"
     },
     {
         "id": 5,
-        "name": "Product 5",
-        "brand": "Brand 5",
-        "model": "Model-1005",
-        "description": "This is a detailed description of product 5.",
+        "name": "Casquillos guía de ajuste a presión",
+        "brand": "McMaster-Carr",
+        "model": "8491A842",
+        "description": "Bolsa de 12 casquillos de 0.392\" de diámetro interno, 1/2\" externo, 1/2\" de largo.",
         "quantity": 105,
-        "category": "Category B",
+        "category": "Componentes de Posicionamiento y Alineación",
         "price": 52.5,
-        "image": "assets/images/product5.png"
+        "image": "assets/images/product5.jpg"
     },
     {
         "id": 6,
-        "name": "Product 6",
-        "brand": "Brand 6",
-        "model": "Model-1006",
-        "description": "This is a detailed description of product 6.",
+        "name": "Pasadores de posicionamiento cónicos",
+        "brand": "McMaster-Carr",
+        "model": "31445A111",
+        "description": "Bolsa de 3 pasadores de 1/4\" de diámetro con cabeza cónica.",
         "quantity": 106,
-        "category": "Category A",
+        "category": "Componentes de Posicionamiento y Alineación",
         "price": 63.0,
-        "image": "assets/images/product6.png"
+        "image": "assets/images/product6.jpg"
     },
     {
         "id": 7,
-        "name": "Product 7",
-        "brand": "Brand 7",
-        "model": "Model-1007",
-        "description": "This is a detailed description of product 7.",
+        "name": "Resorte de torsión",
+        "brand": "McMaster-Carr",
+        "model": "1905291",
+        "description": "Resorte de 0.375\" de diámetro externo, alambre de 0.035\", patas de 0.75\" de largo.",
         "quantity": 107,
-        "category": "Category B",
+        "category": "Componentes de Movimiento y Vibración",
         "price": 73.5,
-        "image": "assets/images/product7.png"
+        "image": "assets/images/product7.jpg"
     },
     {
         "id": 8,
-        "name": "Product 8",
-        "brand": "Brand 8",
-        "model": "Model-1008",
-        "description": "This is a detailed description of product 8.",
+        "name": "Varilla roscada tipo Acme",
+        "brand": "McMaster-Carr",
+        "model": "93255A471",
+        "description": "Varilla roscada de 1\"-5, 12\" de largo, acero aleado.",
         "quantity": 108,
-        "category": "Category A",
+        "category": "Componentes de Movimiento y Vibración",
         "price": 84.0,
-        "image": "assets/images/product8.png"
+        "image": "assets/images/product8.jpg"
     },
     {
         "id": 9,
@@ -96,7 +96,7 @@
         "quantity": 109,
         "category": "Category B",
         "price": 94.5,
-        "image": "assets/images/product9.png"
+        "image": "assets/images/product9.jpg"
     },
     {
         "id": 10,
@@ -107,6 +107,6 @@
         "quantity": 110,
         "category": "Category A",
         "price": 105.0,
-        "image": "assets/images/product10.png"
+        "image": "assets/images/product10.jpg"
     }
 ]
