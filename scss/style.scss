@@ -4,9 +4,11 @@ $primary: #a1a6b4;
 $secondary: #94c5cc;
 $accent: #b4d2e7;
 $light: #f8f8f8;
+$background-green: #599906;
+$white: #ffffff;
 
 body {
-  background-color: $light;
+  background-color: $background-green;
   color: $white;
   font-family: Arial, sans-serif;
 }
