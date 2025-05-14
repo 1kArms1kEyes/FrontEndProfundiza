@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "name": "Product 1",
+        "brand": "Brand 1",
+        "model": "Model-1001",
+        "description": "This is a detailed description of product 1.",
+        "quantity": 101,
+        "category": "Category B",
+        "price": 10.5,
+        "image": "assets/images/product1.png"
+    },
+    {
+        "id": 2,
+        "name": "Product 2",
+        "brand": "Brand 2",
+        "model": "Model-1002",
+        "description": "This is a detailed description of product 2.",
+        "quantity": 102,
+        "category": "Category A",
+        "price": 21.0,
+        "image": "assets/images/product2.png"
+    },
+    {
+        "id": 3,
+        "name": "Product 3",
+        "brand": "Brand 3",
+        "model": "Model-1003",
+        "description": "This is a detailed description of product 3.",
+        "quantity": 103,
+        "category": "Category B",
+        "price": 31.5,
+        "image": "assets/images/product3.png"
+    },
+    {
+        "id": 4,
+        "name": "Product 4",
+        "brand": "Brand 4",
+        "model": "Model-1004",
+        "description": "This is a detailed description of product 4.",
+        "quantity": 104,
+        "category": "Category A",
+        "price": 42.0,
+        "image": "assets/images/product4.png"
+    },
+    {
+        "id": 5,
+        "name": "Product 5",
+        "brand": "Brand 5",
+        "model": "Model-1005",
+        "description": "This is a detailed description of product 5.",
+        "quantity": 105,
+        "category": "Category B",
+        "price": 52.5,
+        "image": "assets/images/product5.png"
+    },
+    {
+        "id": 6,
+        "name": "Product 6",
+        "brand": "Brand 6",
+        "model": "Model-1006",
+        "description": "This is a detailed description of product 6.",
+        "quantity": 106,
+        "category": "Category A",
+        "price": 63.0,
+        "image": "assets/images/product6.png"
+    },
+    {
+        "id": 7,
+        "name": "Product 7",
+        "brand": "Brand 7",
+        "model": "Model-1007",
+        "description": "This is a detailed description of product 7.",
+        "quantity": 107,
+        "category": "Category B",
+        "price": 73.5,
+        "image": "assets/images/product7.png"
+    },
+    {
+        "id": 8,
+        "name": "Product 8",
+        "brand": "Brand 8",
+        "model": "Model-1008",
+        "description": "This is a detailed description of product 8.",
+        "quantity": 108,
+        "category": "Category A",
+        "price": 84.0,
+        "image": "assets/images/product8.png"
+    },
+    {
+        "id": 9,
+        "name": "Product 9",
+        "brand": "Brand 9",
+        "model": "Model-1009",
+        "description": "This is a detailed description of product 9.",
+        "quantity": 109,
+        "category": "Category B",
+        "price": 94.5,
+        "image": "assets/images/product9.png"
+    },
+    {
+        "id": 10,
+        "name": "Product 10",
+        "brand": "Brand 10",
+        "model": "Model-1010",
+        "description": "This is a detailed description of product 10.",
+        "quantity": 110,
+        "category": "Category A",
+        "price": 105.0,
+        "image": "assets/images/product10.png"
+    }
+]
